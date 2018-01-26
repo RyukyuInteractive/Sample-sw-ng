@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-view-home-news',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewHomeNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private posts: PostsService) {
+  }
 
   ngOnInit() {
+    this.posts.fetch();
   }
 
 }
