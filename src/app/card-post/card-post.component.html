@@ -1,3 +1,15 @@
-<p>
-  {{title.rendered}}
-</p>
+<mat-card class="mat-elevation-z1">
+
+  <mat-card-header>
+    <mat-card-title>{{title.rendered}}</mat-card-title>
+    <mat-card-subtitle>{{date}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-actions>
+    <div class="spacer"></div>
+    <a mat-icon-button [routerLink]="routerLink">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </a>
+  </mat-card-actions>
+
+</mat-card>

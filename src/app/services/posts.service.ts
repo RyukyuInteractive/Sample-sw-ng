@@ -15,10 +15,22 @@ export class PostsService {
   public fetch() {
     return this.http
       .get(this.endpoint)
-      .subscribe((res) => {
-        console.log(res);
-        this.docs = res as Post[];
+      .subscribe((docs) => {
+        console.log(docs);
+        this.docs = (docs as Post[])
+          .map((doc) => {
+            return {
+              ...doc,
+              content: {
+                rendered: this.refactorHtml(doc.content.rendered)
+              }
+            } as Post;
+          });
       });
+  }
+
+  refactorHtml(html) {
+    return html.replace(/\/common/g, 'https://www.ryukyu-i.co.jp/common');
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PostTitle } from '../interfaces/post';
+import { PostContent, PostTitle } from '../interfaces/post';
 
 @Component({
   selector: 'app-card-post',
@@ -9,11 +9,24 @@ import { PostTitle } from '../interfaces/post';
 export class CardPostComponent implements OnInit {
 
   @Input() title: PostTitle;
+  @Input() date: string;
+  @Input() content: PostContent;
+  @Input() id: number;
+
+  public isHide = true;
 
   constructor() {
   }
 
-  ngOnInit() {
+  public get routerLink() {
+    return `/post/${this.id}`;
+  }
+
+  public onOpenClick() {
+    this.isHide = !this.isHide;
+  }
+
+  public ngOnInit() {
   }
 
 }

@@ -1,12 +1,14 @@
-<nav mat-tab-nav-bar>
-  <a mat-tab-link
-     *ngFor="let link of navLinks"
-     #rla="routerLinkActive"
-     routerLinkActive
-     [routerLink]="link.path"
-     [active]="rla.isActive">
-    {{link.label}}
-  </a>
-</nav>
+<header>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let link of navLinks"
+       #rla="routerLinkActive"
+       routerLinkActive
+       [routerLink]="link.path"
+       [active]="rla.isActive">
+      {{link.label}}
+    </a>
+  </nav>
+</header>
 
 <router-outlet></router-outlet>
