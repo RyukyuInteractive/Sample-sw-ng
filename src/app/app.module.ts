@@ -13,6 +13,7 @@ import { ViewHomePostListComponent } from './view-home-post-list/view-home-post-
 import { PostsService } from './services/posts.service';
 import { CardPostComponent } from './card-post/card-post.component';
 import { ViewHomePostDetailComponent } from './view-home-post-detail/view-home-post-detail.component';
+import { HeaderPostDetailComponent } from './header-post-detail/header-post-detail.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ViewHomePostDetailComponent } from './view-home-post-detail/view-home-p
     ViewHomeComponent,
     ViewHomePostListComponent,
     CardPostComponent,
-    ViewHomePostDetailComponent
+    ViewHomePostDetailComponent,
+    HeaderPostDetailComponent
   ],
   imports: [
     AppRoutingModule,
