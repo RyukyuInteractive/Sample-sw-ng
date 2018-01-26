@@ -1,0 +1,18 @@
+:host {
+  background: white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 0 8px;
+  z-index: 100;
+}
+
+.mat-icon-button {
+  margin-top: 4px;
+}
+
+.mat-tab-nav-bar {
+}

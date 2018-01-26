@@ -1,3 +1,9 @@
-<p>
-  view-home-post-detail works!
-</p>
+<app-header-home-post-detail></app-header-home-post-detail>
+
+<ng-container *ngIf="!isLoading">
+
+  <h1 class="mat-display-1">{{title.rendered}}</h1>
+
+  <div [innerHtml]="content.rendered"></div>
+
+</ng-container>

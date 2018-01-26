@@ -13,8 +13,8 @@ import { ViewHomePostListComponent } from './view-home-post-list/view-home-post-
 import { PostsService } from './services/posts.service';
 import { CardPostComponent } from './card-post/card-post.component';
 import { ViewHomePostDetailComponent } from './view-home-post-detail/view-home-post-detail.component';
-import { HeaderPostDetailComponent } from './header-post-detail/header-post-detail.component';
-import { HeaderPostListComponent } from './header-post-list/header-post-list.component';
+import { HeaderHomePostDetailComponent } from './header-home-post-detail/header-home-post-detail.component';
+import { HeaderHomeComponent } from './header-home/header-home.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +23,8 @@ import { HeaderPostListComponent } from './header-post-list/header-post-list.com
     ViewHomePostListComponent,
     CardPostComponent,
     ViewHomePostDetailComponent,
-    HeaderPostDetailComponent,
-    HeaderPostListComponent
+    HeaderHomePostDetailComponent,
+    HeaderHomeComponent
   ],
   imports: [
     AppRoutingModule,

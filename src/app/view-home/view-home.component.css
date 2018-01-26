@@ -1,21 +1,6 @@
 :host {
   display: block;
   padding-top: 49px;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-header {
-  background: white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  z-index: 100;
-}
-
-.mat-tab-nav-bar {
-  margin: auto;
-  width: calc(100% - 16px);
+  padding-left: 1px;
+  padding-right: 1px;
 }

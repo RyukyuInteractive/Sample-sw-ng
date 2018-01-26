@@ -12,7 +12,9 @@ export class ViewHomePostListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.posts.fetch();
+    this.posts.fetchAll({
+      categories: '2'
+    });
   }
 
 }

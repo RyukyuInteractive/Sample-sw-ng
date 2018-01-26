@@ -7,11 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./view-home.component.css']
 })
 export class ViewHomeComponent implements OnInit {
-  public navLinks = [
-    {
-      label: 'home',
-      path: '/'
-    }];
 
   constructor() {
   }
