@@ -1,12 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { PostsService } from '../services/posts.service';
+import { ISubscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-header-home',
   templateUrl: './header-home.component.html',
   styleUrls: ['./header-home.component.css']
 })
-export class HeaderHomeComponent implements OnInit {
-
+export class HeaderHomeComponent implements OnInit, OnDestroy {
+  private subscription: ISubscription;
+  public hide = false;
   public navLinks = [
     {
       label: '全て',
@@ -19,7 +22,7 @@ export class HeaderHomeComponent implements OnInit {
       path: '/press-release'
     }];
 
-  constructor() {
+  constructor(public posts: PostsService) {
   }
 
   public onChangeRouteClick() {
@@ -27,6 +30,13 @@ export class HeaderHomeComponent implements OnInit {
   }
 
   public ngOnInit() {
+    this.subscription = this.posts.isFetching
+      .subscribe((res: boolean) => {
+        this.hide = res;
+      });
   }
 
+  public ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

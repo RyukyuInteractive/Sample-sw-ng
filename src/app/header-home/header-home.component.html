@@ -1,3 +1,5 @@
+<mat-progress-bar *ngIf="hide" mode="indeterminate"></mat-progress-bar>
+
 <nav mat-tab-nav-bar>
   <a mat-tab-link
      *ngFor="let link of navLinks"
@@ -5,7 +7,7 @@
      routerLinkActive
      [routerLink]="link.path"
      [active]="rla.isActive"
-  (click)="onChangeRouteClick()">
+     (click)="onChangeRouteClick()">
     {{link.label}}
   </a>
 </nav>

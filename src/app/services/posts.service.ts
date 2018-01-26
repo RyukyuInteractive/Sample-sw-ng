@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { Subject } from 'rxjs/Subject';
+
 import { Post } from '../interfaces/post';
 
 interface FetchAllArg {
@@ -11,14 +13,18 @@ interface FetchAllArg {
 export class PostsService {
   private endpoint = 'https://www.ryukyu-i.co.jp/wp-json/wp/v2/posts/';
 
+  public isFetching = new Subject();
+
   public docs: Post[];
 
   public docsMap = new Map();
 
   constructor(private http: HttpClient) {
+    this.isFetching.next(false);
   }
 
   public fetchAll(args: FetchAllArg) {
+    this.isFetching.next(true);
     let query = '?';
     if (args.categories) {
       query += 'categories=' + args.categories;
@@ -41,6 +47,7 @@ export class PostsService {
         this.docs.forEach((doc) => {
           this.docsMap.set(doc.id.toString(), doc);
         });
+        this.isFetching.next(false);
       });
   }
 

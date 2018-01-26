@@ -10,10 +10,17 @@
   z-index: 100;
 }
 
-.mat-icon-button {
-  margin-top: 4px;
+.mat-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.hide {
+  opacity: 0;
 }
 
 .mat-tab-nav-bar {
+  padding-top: 5px;
   width: 100%;
 }
