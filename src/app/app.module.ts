@@ -9,16 +9,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { ViewHomeComponent } from './view-home/view-home.component';
-import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component';
+import { ViewHomePostListComponent } from './view-home-post-list/view-home-post-list.component';
 import { PostsService } from './services/posts.service';
 import { CardPostComponent } from './card-post/card-post.component';
+import { ViewHomePostDetailComponent } from './view-home-post-detail/view-home-post-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewHomeComponent,
-    ViewHomeNewsComponent,
-    CardPostComponent
+    ViewHomePostListComponent,
+    CardPostComponent,
+    ViewHomePostDetailComponent
   ],
   imports: [
     AppRoutingModule,

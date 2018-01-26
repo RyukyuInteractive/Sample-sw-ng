@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ViewHomeComponent } from './view-home/view-home.component';
-import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component';
+import { ViewHomePostListComponent } from './view-home-post-list/view-home-post-list.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ViewHomeNewsComponent
+        component: ViewHomePostListComponent
       }]
   }];
 
