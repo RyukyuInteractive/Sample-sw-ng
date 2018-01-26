@@ -1,7 +1,13 @@
-.mat-toolbar {
-  background: white;
+:host {
+  display: block;
+  padding-top: 49px;
 }
 
 .mat-tab-nav-bar {
-  display: block;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

@@ -1,10 +1,10 @@
 export interface PostContent {
   protected: boolean;
-  renderd: string;
+  rendered: string;
 }
 
 export interface PostTitle {
-  renderd: string;
+  rendered: string;
 }
 
 export interface Post {

@@ -1,3 +1,4 @@
-<p>
-  view-home-news works!
-</p>
+<app-card-post
+  *ngFor="let post of posts.docs; index as i"
+  [title]="post.title">
+</app-card-post>

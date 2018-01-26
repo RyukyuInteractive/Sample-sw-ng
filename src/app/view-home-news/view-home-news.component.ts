@@ -8,7 +8,7 @@ import { PostsService } from '../services/posts.service';
 })
 export class ViewHomeNewsComponent implements OnInit {
 
-  constructor(private posts: PostsService) {
+  constructor(public posts: PostsService) {
   }
 
   ngOnInit() {
