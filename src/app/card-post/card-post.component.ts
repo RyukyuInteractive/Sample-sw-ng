@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PostContent, PostTitle } from '../interfaces/post';
+import { PostContent, PostExcerpt, PostTitle } from '../interfaces/post';
 
 @Component({
   selector: 'app-card-post',
@@ -8,8 +8,10 @@ import { PostContent, PostTitle } from '../interfaces/post';
 })
 export class CardPostComponent implements OnInit {
 
+  @Input() categories: number[];
   @Input() title: PostTitle;
   @Input() date: string;
+  @Input() excerpt: PostExcerpt;
   @Input() content: PostContent;
   @Input() id: number;
 
@@ -18,12 +20,17 @@ export class CardPostComponent implements OnInit {
   constructor() {
   }
 
-  public get routerLink() {
-    return `/post/${this.id}`;
+  getCategory(number) {
+    switch (number) {
+      case 2:
+        return 'プレスリリース';
+      case 3:
+        return 'お知らせ';
+    }
   }
 
-  public onOpenClick() {
-    this.isHide = !this.isHide;
+  public get routerLink() {
+    return `/post/${this.id}`;
   }
 
   public ngOnInit() {

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Post } from '../interfaces/post';
 
@@ -19,9 +19,12 @@ export class PostsService {
   }
 
   public fetchAll(args: FetchAllArg) {
-    const params = new HttpParams().set('categories', args.categories);
+    let query = '?';
+    if (args.categories) {
+      query += 'categories=' + args.categories;
+    }
     return this.http
-      .get(this.endpoint, {params: params})
+      .get(this.endpoint + query)
       .subscribe((docs: Post[]) => {
         this.docs = docs
           .map((doc) => {
@@ -29,6 +32,9 @@ export class PostsService {
               ...doc,
               content: {
                 rendered: this.refactorHtml(doc.content.rendered)
+              },
+              excerpt: {
+                rendered: this.refactorHtml(doc.excerpt.rendered)
               }
             } as Post;
           });
@@ -42,6 +48,7 @@ export class PostsService {
     return this.http
       .get(this.endpoint + id)
       .map((doc: Post) => {
+        console.log(doc);
         const newDoc = {
           ...doc,
           content: {
@@ -56,7 +63,8 @@ export class PostsService {
   private refactorHtml(html) {
     return html
       .replace(/\/common/g, 'https://www.ryukyu-i.co.jp/common')
-      .replace(/<p/g, '<p class="mat-body-2"');
+      .replace(/<p/g, '<p class="mat-body-2"')
+      .replace(/\[&hellip;]/g, '...');
   }
 
 }

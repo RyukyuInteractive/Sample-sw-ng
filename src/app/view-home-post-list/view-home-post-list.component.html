@@ -3,8 +3,10 @@
 <app-card-post
   *ngFor="let post of posts.docs; index as i"
   class="card"
+  [categories]="post.categories"
   [title]="post.title"
   [date]="post.date"
+  [excerpt]="post.excerpt"
   [content]="post.content"
   [id]="post.id">
 </app-card-post>

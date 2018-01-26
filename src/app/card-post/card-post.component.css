@@ -2,6 +2,22 @@
   display: block;
 }
 
+.category {
+  color: white;
+  background: gray;
+  padding: 0px 5px;
+  border-radius: 2px;
+}
+
+.mat-card-subtitle {
+  display: flex;
+}
+
+.date {
+  line-height: 20px;
+  letter-spacing: 1px;
+}
+
 .mat-card-actions {
   display: flex;
 }

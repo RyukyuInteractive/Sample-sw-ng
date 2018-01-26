@@ -15,25 +15,22 @@ export class ViewHomePostDetailComponent implements OnInit {
   public isLoading = true;
 
   constructor(
-    private router: ActivatedRoute,
+    private route: ActivatedRoute,
     public posts: PostsService) {
   }
 
   ngOnInit() {
     window.scrollTo(0, 0);
-    this.router.params
-      .take(1)
-      .subscribe(params => {
-        const doc = this.posts.docsMap.get(params.id);
-        if (!doc) {
-          this.posts.fetch(params.id)
-            .subscribe((newDoc) => {
-              this.setDoc(newDoc);
-            });
-        } else {
-          this.setDoc(doc);
-        }
-      });
+    const params = this.route.snapshot.params;
+    const doc = this.posts.docsMap.get(params.id);
+    if (!doc) {
+      this.posts.fetch(params.id)
+        .subscribe((newDoc) => {
+          this.setDoc(newDoc);
+        });
+    } else {
+      this.setDoc(doc);
+    }
   }
 
   setDoc(doc) {

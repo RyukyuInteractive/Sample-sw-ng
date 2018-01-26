@@ -15,8 +15,25 @@ const routes: Routes = [
         component: ViewHomePostDetailComponent
       },
       {
+        path: 'press-release',
+        component: ViewHomePostListComponent,
+        data: {
+          categories: '2'
+        }
+      },
+      {
+        path: 'news',
+        component: ViewHomePostListComponent,
+        data: {
+          categories: '3'
+        }
+      },
+      {
         path: '',
-        component: ViewHomePostListComponent
+        component: ViewHomePostListComponent,
+        data: {
+          categories: null
+        }
       }]
   }];
 

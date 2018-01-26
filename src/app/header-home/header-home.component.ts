@@ -6,15 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-home.component.css']
 })
 export class HeaderHomeComponent implements OnInit {
+
   public navLinks = [
     {
-      label: 'home',
+      label: '全て',
       path: '/'
+    }, {
+      label: 'お知らせ',
+      path: '/news'
+    }, {
+      label: 'プレスリリース',
+      path: '/press-release'
     }];
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {
+  public onChangeRouteClick() {
+    window.scrollTo(0, 0);
+  }
+
+  public ngOnInit() {
   }
 
 }

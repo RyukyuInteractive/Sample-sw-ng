@@ -1,9 +1,18 @@
 <mat-card class="mat-elevation-z1">
 
   <mat-card-header>
+    <mat-card-subtitle>
+      <span class="mat-caption category" *ngFor="let number of categories">
+        {{getCategory(number)}}
+      </span>
+      <span class="spacer"></span>
+      <span class="mat-body-1 date">{{date|date:'yyyy/MM/dd'}}</span>
+    </mat-card-subtitle>
     <mat-card-title>{{title.rendered}}</mat-card-title>
-    <mat-card-subtitle>{{date}}</mat-card-subtitle>
+    <mat-card-subtitle>{{date|date:'yyyy/MM/dd'}}</mat-card-subtitle>
   </mat-card-header>
+
+  <mat-card-content [innerHtml]="excerpt.rendered"></mat-card-content>
 
   <mat-card-actions>
     <div class="spacer"></div>

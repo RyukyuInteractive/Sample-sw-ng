@@ -3,6 +3,11 @@ export interface PostContent {
   rendered: string;
 }
 
+export interface PostExcerpt {
+  protected: boolean;
+  rendered: string;
+}
+
 export interface PostTitle {
   rendered: string;
 }
@@ -12,6 +17,7 @@ export interface Post {
   categories: number[];
   content: PostContent;
   date: string;
+  excerpt: PostExcerpt;
   featured_media: number;
   format: string;
   id: number;

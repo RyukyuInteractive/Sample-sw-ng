@@ -7,7 +7,6 @@ img {
   margin: 0 auto;
 }
 
-.isHide {
-  height: 0;
-  overflow: hidden;
+.mat-card-header-text {
+  width: 100%;
 }

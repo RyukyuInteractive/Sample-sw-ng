@@ -4,7 +4,8 @@
      #rla="routerLinkActive"
      routerLinkActive
      [routerLink]="link.path"
-     [active]="rla.isActive">
+     [active]="rla.isActive"
+  (click)="onChangeRouteClick()">
     {{link.label}}
   </a>
 </nav>

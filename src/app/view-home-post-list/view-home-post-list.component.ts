@@ -1,20 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { PostsService } from '../services/posts.service';
+import { ActivatedRoute } from '@angular/router';
+import { ISubscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-view-home-posts',
   templateUrl: './view-home-post-list.component.html',
   styleUrls: ['./view-home-post-list.component.css']
 })
-export class ViewHomePostListComponent implements OnInit {
+export class ViewHomePostListComponent implements OnInit, OnDestroy {
 
-  constructor(public posts: PostsService) {
+  private subscription: ISubscription;
+
+  constructor(
+    public posts: PostsService,
+    private route: ActivatedRoute) {
   }
 
-  ngOnInit() {
-    this.posts.fetchAll({
-      categories: '2'
+  public ngOnInit() {
+    this.subscription = this.route.data.subscribe((data) => {
+      this.posts.fetchAll({
+        categories: data.categories
+      });
     });
+  }
+
+  public ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
