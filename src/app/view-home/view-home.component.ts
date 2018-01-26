@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-home',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-home.component.css']
 })
 export class ViewHomeComponent implements OnInit {
+  public navLinks = [
+    {
+      label: 'home',
+      path: '/'
+    }];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

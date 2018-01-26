@@ -1,10 +1,23 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { ViewHomeComponent } from './view-home/view-home.component';
+import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ViewHomeComponent,
+    children: [
+      {
+        path: '',
+        component: ViewHomeNewsComponent
+      }]
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
