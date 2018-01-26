@@ -14,6 +14,7 @@ import { PostsService } from './services/posts.service';
 import { CardPostComponent } from './card-post/card-post.component';
 import { ViewHomePostDetailComponent } from './view-home-post-detail/view-home-post-detail.component';
 import { HeaderPostDetailComponent } from './header-post-detail/header-post-detail.component';
+import { HeaderPostListComponent } from './header-post-list/header-post-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderPostDetailComponent } from './header-post-detail/header-post-deta
     ViewHomePostListComponent,
     CardPostComponent,
     ViewHomePostDetailComponent,
-    HeaderPostDetailComponent
+    HeaderPostDetailComponent,
+    HeaderPostListComponent
   ],
   imports: [
     AppRoutingModule,
