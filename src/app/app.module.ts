@@ -11,12 +11,14 @@ import { MaterialModule } from './material.module';
 import { ViewHomeComponent } from './view-home/view-home.component';
 import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component';
 import { PostsService } from './services/posts.service';
+import { CardPostComponent } from './card-post/card-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewHomeComponent,
-    ViewHomeNewsComponent
+    ViewHomeNewsComponent,
+    CardPostComponent
   ],
   imports: [
     AppRoutingModule,
