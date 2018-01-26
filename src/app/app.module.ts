@@ -9,6 +9,7 @@ import {AppComponent} from './app.component';
 import {MaterialModule} from './material.module';
 import { ViewHomeComponent } from './view-home/view-home.component';
 import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component';
+import { PostsService } from './services/posts.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ViewHomeNewsComponent } from './view-home-news/view-home-news.component
       enabled: environment.production
     })
   ],
-  providers: [],
+  providers: [PostsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
