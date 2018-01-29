@@ -34,7 +34,7 @@
     {
       "name": "ryukyu-wp-api",
       "urls": [
-        "https://www.ryukyu-i.co.jp/wp-json/wp/v2/posts"
+        "https://www.ryukyu-i.co.jp/wp-json/wp/v2/**"
       ],
       "cacheConfig": {
         "maxSize": 100,

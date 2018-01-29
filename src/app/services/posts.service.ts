@@ -53,9 +53,8 @@ export class PostsService {
 
   public fetch(id) {
     return this.http
-      .get(this.endpoint + id)
+      .get(this.endpoint + '/' + id)
       .map((doc: Post) => {
-        console.log(doc);
         const newDoc = {
           ...doc,
           content: {
