@@ -32,26 +32,14 @@
   ],
   "dataGroups": [
     {
-      "name": "api-freshness",
+      "name": "ryukyu-wp-api",
       "urls": [
-        "/"
+        "https://www.ryukyu-i.co.jp/wp-json/wp/v2/posts"
       ],
       "cacheConfig": {
         "maxSize": 100,
         "maxAge": "1h",
         "timeout": "10s",
-        "strategy": "freshness"
-      }
-    },
-    {
-      "name": "api-performance",
-      "urls": [
-        "/",
-        "/post"
-      ],
-      "cacheConfig": {
-        "maxSize": 100,
-        "maxAge": "1d",
         "strategy": "performance"
       }
     }
