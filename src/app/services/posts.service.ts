@@ -11,7 +11,7 @@ interface FetchAllArg {
 
 @Injectable()
 export class PostsService {
-  private endpoint = 'https://www.ryukyu-i.co.jp/wp-json/wp/v2/posts/';
+  private endpoint = 'https://www.ryukyu-i.co.jp/wp-json/wp/v2/posts';
 
   public isFetching = new Subject();
 
